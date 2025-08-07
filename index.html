@@ -1,105 +1,345 @@
 <!DOCTYPE html>
-<html lang="it">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ChillTool's | Home</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-    <link rel="icon" href="https://raw.githubusercontent.com/ChillSpotIT/chilltools.it/refs/heads/main/logo%20chilltools.png" type="image/png">
-    <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
-      html {
-  scroll-behavior: smooth;
-}
-    </style>
-  </head>
-  <body class="bg-black text-white">
-    <!-- Banner -->
-<header class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur border-b border-white/10">
-  <!-- Barra della community di discord -->
-  <div class="text-sm text-center bg-black text-white py-2 border-b border-gray-800">
-    🔗 Unisciti alla nostra <a href="https://discord.gg/FBsPkXDche" class="underline text-blue-400 hover:text-blue-500">community Discord</a>
-  </div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ChillTool's | Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://raw.githubusercontent.com/ChillSpotIT/chilltools.it/refs/heads/main/logo%20chilltools.png" type="image/png">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
 
-  <!-- LA NAVBAR (nessuno la usa pero' e' li') -->
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold tracking-tight">Chill<span class="text-blue-500">Tool's</span></h1>
-    <nav class="flex gap-6 items-center text-sm">
-      <a href="#features" class="hover:text-blue-400 transition">Funzioni</a>
-      <a href="#contact" class="hover:text-blue-400 transition">Contatti</a>
-      <a href="#download" class="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">Download</a>
-      <a href="Languages" class="hover:text-red-400 transition">Lingue</a>
-    </nav>
+<body class="bg-black text-white">
+<!-- Top bar per le robe nostre :33333 -->
+<header class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur border-b border-white/10">
+  <div class="flex items-center justify-between max-w-7xl mx-auto px-6 py-3">
+    <h1 class="text-2xl font-bold">Chill<span class="text-blue-500">Tool's</span></h1>
+
+    <!-- Selettore lingue, poco da dire fa quello che deve fare -->
+    <select id="languageSelector" class="bg-black border border-white/20 text-white rounded px-3 py-1 text-sm">
+      <option value="en">English</option>
+      <option value="it">Italiano</option>
+      <option value="zh">中文</option>
+      <option value="hi">हिन्दी</option>
+      <option value="es">Español</option>
+      <option value="ar">العربية</option>
+      <option value="fr">Français</option>
+      <option value="bn">বাংলা</option>
+      <option value="ru">Русский</option>
+      <option value="pt">Português</option>
+      <option value="id">Bahasa</option>
+    </select>
   </div>
 </header>
 
-
-    <!-- Sezione Hero (Centrale nello schermo) -->
-    <section class="h-screen flex items-center justify-center text-center relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-br from-purple-800/30 via-blue-800/30 to-black backdrop-blur-lg"></div>
-      <div class="relative z-10 px-6 max-w-3xl">
-        <p class="text-sm uppercase tracking-widest text-blue-400 mb-4">Presentiamo ChillTool's</p>
-        <h2 class="text-5xl font-extrabold leading-tight mb-6">Rivoluziona Uhmegle.<br />Funzionalità che davvero servono.</h2>
-        <p class="text-gray-300 text-lg mb-8">Screenshot, reincontri immediati e una gestione completa delle tue chat. Tutto in un'unica estensione.</p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="#download" class="px-6 py-3 bg-blue-600 rounded text-white font-medium hover:bg-blue-700 transition">Scarica ora</a>
-          <a href="#features" class="px-6 py-3 border border-white/20 rounded text-white hover:bg-white/10 transition">Scopri di più →</a>
-        </div>
-      </div>
-    </section>
-
-
-<section id="features" class="py-24 bg-black px-6 max-w-6xl mx-auto">
-  <h3 class="text-4xl font-bold text-center mb-16">Funzionalità Potenziate</h3>
-  <div class="grid md:grid-cols-3 gap-12">
-    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 transition-transform">
-      <h4 class="text-xl font-semibold mb-3">📸 Screenshot</h4>
-      <p class="text-gray-400">Cattura i momenti più interessanti o divertenti della tua chat Omegle con un click.</p>
-    </div>
-    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 transition-transform">
-      <h4 class="text-xl font-semibold mb-3">🔁 Reincontro</h4>
-      <p class="text-gray-400">Hai perso qualcuno interessante? Trovalo subito grazie alla funzione di reincontro istantaneo.</p>
-    </div>
-    <!-- NUOVE FUNZIONI AGGIUNTE LUGLIO 2025 -->
-    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 transition-transform">
-      <h4 class="text-xl font-semibold mb-3">🌍 IP Tracking</h4>
-      <p class="text-gray-400">Visualizza l'indirizzo IP, la città e la regione dell’utente connesso. Ogni conversazione diventa più trasparente.</p>
-    </div>
-    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 transition-transform">
-      <h4 class="text-xl font-semibold mb-3">🕓 Cronologia</h4>
-      <p class="text-gray-400">Salva automaticamente cronologia, IP e screenshot degli utenti che incontri, con un'interfaccia facile da esplorare.</p>
-    </div>
-    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 transition-transform">
-      <h4 class="text-xl font-semibold mb-3">🌐 Supporto Multilingua</h4>
-      <p class="text-gray-400">L'interfaccia è disponibile in oltre 11 lingue. Goditi l’esperienza ChillTool's nella tua lingua madre.</p>
+<!-- Questa e' la hero, se non si vede bene si fixa come meglio si crede -->
+<section class="h-screen flex items-center justify-center text-center px-6 relative">
+  <div class="absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-black"></div>
+  <div class="relative z-10 max-w-3xl">
+    <p class="text-sm uppercase tracking-widest text-blue-400 mb-3" data-lang-key="intro">Introducing ChillTool's</p>
+    <h2 class="text-4xl sm:text-5xl font-extrabold leading-tight mb-5" data-lang-key="headline">Revolutionize Uhmegle. Features you actually need.</h2>
+    <p class="text-gray-300 text-lg mb-8" data-lang-key="subheadline">Screenshots, pause chat anytime, full history and more — all in one powerful extension.</p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4">
+      <a href="#download" class="px-6 py-3 bg-blue-600 rounded text-white font-medium hover:bg-blue-700 transition" data-lang-key="downloadNow">Download Now</a>
+      <a href="#features" class="px-6 py-3 border border-white/20 rounded text-white hover:bg-white/10 transition" data-lang-key="learnMore">Learn More →</a>
     </div>
   </div>
 </section>
 
+<!-- Sezione delle features, va bene cosi, forse va fixata la versione mobile -->
+<section id="features" class="py-24 px-6 max-w-7xl mx-auto">
+  <h3 class="text-4xl font-bold text-center mb-16" data-lang-key="featuresTitle">Enhanced Features</h3>
+  <div class="grid md:grid-cols-3 gap-10">
+    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 transition-transform">
+      <h4 class="text-xl font-semibold mb-2">📸 <span data-lang-key="featureScreenshot">Screenshot</span></h4>
+      <p class="text-gray-400" data-lang-key="featureScreenshotDesc">Capture the best moments of your Omegle chat in one click.</p>
+    </div>
+    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 transition-transform">
+      <h4 class="text-xl font-semibold mb-2">⏸️ <span data-lang-key="featurePause">Pause Chat</span></h4>
+      <p class="text-gray-400" data-lang-key="featurePauseDesc">Need a break? Pause conversations whenever you want, instantly.</p>
+    </div>
+    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 transition-transform">
+      <h4 class="text-xl font-semibold mb-2">🌍 <span data-lang-key="featureIP">IP Tracking</span></h4>
+      <p class="text-gray-400" data-lang-key="featureIPDesc">See the user's IP, city and region for more transparent interactions.</p>
+    </div>
+    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 transition-transform">
+      <h4 class="text-xl font-semibold mb-2">🕓 <span data-lang-key="featureHistory">History</span></h4>
+      <p class="text-gray-400" data-lang-key="featureHistoryDesc">All IPs, screenshots and sessions saved automatically, beautifully organized.</p>
+    </div>
+    <div class="bg-white/5 p-6 rounded-2xl hover:scale-105 transition-transform">
+      <h4 class="text-xl font-semibold mb-2">🌐 <span data-lang-key="featureMultilang">Multilanguage UI</span></h4>
+      <p class="text-gray-400" data-lang-key="featureMultilangDesc">Use ChillTool's in your native language — 11 languages available.</p>
+    </div>
+  </div>
+</section>
 
-    <!-- Download Section (OH MAI GODD) -->
+<!-- Sezione dei download, da fixare ovviamente-->
 <section id="download" class="py-24 text-center">
-  <h3 class="text-4xl font-bold mb-6">Scarica ChillTool's</h3>
-  <p class="text-gray-400 mb-4">Estensione compatibile con browser Chromium based</p>
-  <div class="mt-10">
-    <a href="https://discord.gg/MfEFuE4334" class="px-8 py-4 bg-green-600 hover:bg-green-700 rounded-full font-semibold transition">Scarica Estensione</a>
-  </div>
+  <h3 class="text-4xl font-bold mb-6" data-lang-key="downloadTitle">Get ChillTool's Now</h3>
+  <p class="text-gray-400 mb-4" data-lang-key="downloadDesc">Compatible with all Chromium-based browsers</p>
+  <a href="https://discord.gg/MfEFuE4334" class="px-8 py-4 bg-green-600 hover:bg-green-700 rounded-full font-semibold transition" data-lang-key="downloadButton">Download Extension</a>
 </section>
 
-    <!-- Contact Section anche questa e' inutile ma la tengo perche ci ho messo del tempo a trovare le robe di Tailwind -->
-    <section id="contact" class="py-24 text-center">
-      <h3 class="text-3xl font-bold mb-4">Hai domande?</h3>
-      <p class="text-gray-400">Scrivici a <a href="mailto:info@chillspot.it" class="text-blue-400 underline hover:text-blue-300">info@chillspot.it</a></p>
-    </section>
+<!-- il contact invece e' da rifare -->
+<section id="contact" class="py-24 text-center">
+  <h3 class="text-3xl font-bold mb-4" data-lang-key="contactTitle">Have questions?</h3>
+  <p class="text-gray-400" data-lang-key="contactText">Write to us at <a href="mailto:info@chillspot.it" class="text-blue-400 underline hover:text-blue-300">info@chillspot.it</a></p>
+</section>
 
-    <!-- Footer con le scritte inutili -->
-    <footer class="py-6 border-t border-white/10 text-center text-sm text-gray-500">
-      &copy; 2025 ChillTool's. Tutti i diritti riservati. | ChillTool's è parte di ChillSpot&trade;.
-    </footer>
-  </body>
+<!-- Footer va bene cosi solo che mancano le cose importanti tipo la partita iva e il DMCA -->
+<footer class="py-6 border-t border-white/10 text-center text-sm text-gray-500">
+  &copy; 2025 ChillTool's. All rights reserved. | Part of ChillSpot&trade;.
+</footer>
+
+<!-- Language Switch Script -->
+<script>
+  const translations = {
+    it: {
+      intro: "Presentiamo ChillTool's",
+      headline: "Rivoluziona Uhmegle. Funzionalità che davvero servono.",
+      subheadline: "Screenshot, pausa conversazioni, cronologia completa — tutto in un'unica estensione.",
+      downloadNow: "Scarica ora",
+      learnMore: "Scopri di più →",
+      featuresTitle: "Funzionalità Potenziate",
+      featureScreenshot: "Screenshot",
+      featureScreenshotDesc: "Cattura i momenti migliori della tua chat Omegle con un click.",
+      featurePause: "Pausa Chat",
+      featurePauseDesc: "Hai bisogno di una pausa? Metti in pausa le conversazioni quando vuoi.",
+      featureIP: "IP Tracking",
+      featureIPDesc: "Visualizza IP, città e regione dell'utente per interazioni più trasparenti.",
+      featureHistory: "Cronologia",
+      featureHistoryDesc: "Tutti gli IP, screenshot e sessioni vengono salvati automaticamente.",
+      featureMultilang: "Supporto Multilingua",
+      featureMultilangDesc: "Usa ChillTool's nella tua lingua — 11 lingue disponibili.",
+      downloadTitle: "Scarica ChillTool's",
+      downloadDesc: "Compatibile con tutti i browser basati su Chromium",
+      downloadButton: "Scarica Estensione",
+      contactTitle: "Hai domande?",
+      contactText: "Scrivici a"
+    },
+    zh: {
+      intro: "介绍 ChillTool's",
+      headline: "彻底改变 Uhmegle。你真正需要的功能。",
+      subheadline: "截图、随时暂停聊天、完整历史记录 —— 全部集于一身的扩展程序。",
+      downloadNow: "立即下载",
+      learnMore: "了解更多 →",
+      featuresTitle: "增强功能",
+      featureScreenshot: "截图",
+      featureScreenshotDesc: "一键捕捉 Omegle 聊天的精彩瞬间。",
+      featurePause: "暂停聊天",
+      featurePauseDesc: "需要休息？随时暂停对话。",
+      featureIP: "IP 跟踪",
+      featureIPDesc: "查看用户的 IP、城市和地区，让对话更透明。",
+      featureHistory: "历史记录",
+      featureHistoryDesc: "所有 IP、截图和会话都会自动保存。",
+      featureMultilang: "多语言支持",
+      featureMultilangDesc: "使用你母语的 ChillTool's —— 支持 11 种语言。",
+      downloadTitle: "立即获取 ChillTool's",
+      downloadDesc: "兼容所有基于 Chromium 的浏览器",
+      downloadButton: "下载扩展",
+      contactTitle: "有问题？",
+      contactText: "联系我们："
+    },
+    hi: {
+      intro: "ChillTool's पेश करते हैं",
+      headline: "Uhmegle को बदलें। ज़रूरी सुविधाएँ, बस यहीं।",
+      subheadline: "स्क्रीनशॉट, चैट पॉज़, पूरी हिस्ट्री — सब कुछ एक ही एक्सटेंशन में।",
+      downloadNow: "अब डाउनलोड करें",
+      learnMore: "और जानें →",
+      featuresTitle: "उन्नत सुविधाएँ",
+      featureScreenshot: "स्क्रीनशॉट",
+      featureScreenshotDesc: "Omegle चैट के मजेदार पलों को एक क्लिक में कैप्चर करें।",
+      featurePause: "चैट पॉज़ करें",
+      featurePauseDesc: "थोड़ा ब्रेक चाहिए? कभी भी बातचीत रोकें।",
+      featureIP: "IP ट्रैकिंग",
+      featureIPDesc: "यूज़र का IP, शहर और क्षेत्र देखें ताकि बातचीत पारदर्शी रहे।",
+      featureHistory: "इतिहास",
+      featureHistoryDesc: "IP, स्क्रीनशॉट और सेशन्स अपने आप सेव हो जाते हैं।",
+      featureMultilang: "मल्टीलैंग्वेज सपोर्ट",
+      featureMultilangDesc: "ChillTool's को अपनी भाषा में इस्तेमाल करें — 11 भाषाओं में उपलब्ध।",
+      downloadTitle: "अब प्राप्त करें ChillTool's",
+      downloadDesc: "Chromium आधारित ब्राउज़र के साथ संगत",
+      downloadButton: "एक्सटेंशन डाउनलोड करें",
+      contactTitle: "कोई सवाल है?",
+      contactText: "हमें लिखें:"
+    },
+    es: {
+      intro: "Presentamos ChillTool's",
+      headline: "Revoluciona Uhmegle. Funciones que realmente necesitas.",
+      subheadline: "Capturas, pausa en el chat, historial completo — todo en una sola extensión.",
+      downloadNow: "Descargar ahora",
+      learnMore: "Saber más →",
+      featuresTitle: "Funciones mejoradas",
+      featureScreenshot: "Captura de pantalla",
+      featureScreenshotDesc: "Captura los mejores momentos de tu chat en Omegle con un solo clic.",
+      featurePause: "Pausar chat",
+      featurePauseDesc: "¿Necesitas un descanso? Pausa la conversación cuando quieras.",
+      featureIP: "Seguimiento IP",
+      featureIPDesc: "Visualiza IP, ciudad y región del usuario.",
+      featureHistory: "Historial",
+      featureHistoryDesc: "IP, capturas y sesiones guardadas automáticamente.",
+      featureMultilang: "Interfaz multilingüe",
+      featureMultilangDesc: "Usa ChillTool's en tu idioma — 11 idiomas disponibles.",
+      downloadTitle: "Obtén ChillTool's ahora",
+      downloadDesc: "Compatible con navegadores basados en Chromium",
+      downloadButton: "Descargar Extensión",
+      contactTitle: "¿Tienes preguntas?",
+      contactText: "Escríbenos a"
+    },
+    ar: {
+      intro: "تعرف على ChillTool's",
+      headline: "ثورة في Uhmegle. الميزات التي تحتاجها فعلاً.",
+      subheadline: "لقطات شاشة، إيقاف المحادثة، تاريخ كامل — كل ذلك في إضافة واحدة.",
+      downloadNow: "حمّل الآن",
+      learnMore: "اعرف المزيد →",
+      featuresTitle: "ميزات محسّنة",
+      featureScreenshot: "لقطة شاشة",
+      featureScreenshotDesc: "احفظ لحظات محادثاتك المميزة بنقرة واحدة.",
+      featurePause: "إيقاف المحادثة",
+      featurePauseDesc: "تحتاج إلى استراحة؟ أوقف المحادثة متى شئت.",
+      featureIP: "تتبع IP",
+      featureIPDesc: "اعرض عنوان IP، المدينة والمنطقة للطرف الآخر.",
+      featureHistory: "السجل",
+      featureHistoryDesc: "يتم حفظ كل المحادثات ولقطات الشاشة تلقائيًا.",
+      featureMultilang: "دعم متعدد اللغات",
+      featureMultilangDesc: "استخدم ChillTool's بلغتك — 11 لغة متاحة.",
+      downloadTitle: "احصل على ChillTool's الآن",
+      downloadDesc: "متوافق مع جميع المتصفحات المعتمدة على Chromium",
+      downloadButton: "تنزيل الإضافة",
+      contactTitle: "هل لديك أسئلة؟",
+      contactText: "راسلنا على"
+    },
+    fr: {
+      intro: "Découvrez ChillTool's",
+      headline: "Réinvente Uhmegle. Des fonctionnalités utiles, enfin.",
+      subheadline: "Captures, pause, historique complet — tout en une extension.",
+      downloadNow: "Télécharger maintenant",
+      learnMore: "En savoir plus →",
+      featuresTitle: "Fonctionnalités améliorées",
+      featureScreenshot: "Capture d'écran",
+      featureScreenshotDesc: "Prenez des captures de vos conversations en un clic.",
+      featurePause: "Pause conversation",
+      featurePauseDesc: "Besoin d’une pause ? Arrêtez la conversation quand vous voulez.",
+      featureIP: "Suivi IP",
+      featureIPDesc: "Voir l’IP, la ville et la région de l’utilisateur.",
+      featureHistory: "Historique",
+      featureHistoryDesc: "Historique et captures enregistrés automatiquement.",
+      featureMultilang: "Interface multilingue",
+      featureMultilangDesc: "Utilisez ChillTool's dans votre langue — 11 langues disponibles.",
+      downloadTitle: "Téléchargez ChillTool's",
+      downloadDesc: "Compatible avec les navigateurs basés sur Chromium",
+      downloadButton: "Télécharger l'extension",
+      contactTitle: "Une question ?",
+      contactText: "Écrivez-nous à"
+    },
+    bn: {
+      intro: "চিলটুলস উপস্থাপন করছে",
+      headline: "Uhmegle পরিবর্তন করুন। দরকারি ফিচার, সব একসাথে।",
+      subheadline: "স্ক্রিনশট, যেকোনো সময় চ্যাট বন্ধ, ইতিহাস — সব এক জায়গায়।",
+      downloadNow: "এখনই ডাউনলোড করুন",
+      learnMore: "আরও জানুন →",
+      featuresTitle: "উন্নত ফিচারসমূহ",
+      featureScreenshot: "স্ক্রিনশট",
+      featureScreenshotDesc: "এক ক্লিকে আপনার চ্যাটের সেরা মুহূর্তগুলো ধরে রাখুন।",
+      featurePause: "চ্যাট বন্ধ করুন",
+      featurePauseDesc: "বিরতির দরকার? যেকোনো সময় চ্যাট বন্ধ করুন।",
+      featureIP: "আইপি ট্র্যাকিং",
+      featureIPDesc: "ব্যবহারকারীর আইপি, শহর ও অঞ্চল দেখুন।",
+      featureHistory: "ইতিহাস",
+      featureHistoryDesc: "সব চ্যাট, স্ক্রিনশট সংরক্ষিত থাকে।",
+      featureMultilang: "বহুভাষা সমর্থন",
+      featureMultilangDesc: "নিজের ভাষায় ব্যবহার করুন — ১১টি ভাষা রয়েছে।",
+      downloadTitle: "এখনই চিলটুলস পান",
+      downloadDesc: "Chromium-ভিত্তিক ব্রাউজারের সাথে সামঞ্জস্যপূর্ণ",
+      downloadButton: "এক্সটেনশন ডাউনলোড করুন",
+      contactTitle: "প্রশ্ন আছে?",
+      contactText: "যোগাযোগ করুন"
+    },
+    ru: {
+      intro: "Представляем ChillTool's",
+      headline: "Революция на Uhmegle. Функции, которые действительно нужны.",
+      subheadline: "Скриншоты, пауза, история — всё в одном расширении.",
+      downloadNow: "Скачать сейчас",
+      learnMore: "Узнать больше →",
+      featuresTitle: "Расширенные функции",
+      featureScreenshot: "Скриншот",
+      featureScreenshotDesc: "Сохраняйте яркие моменты чата в один клик.",
+      featurePause: "Пауза чата",
+      featurePauseDesc: "Нужна пауза? Остановите чат в любой момент.",
+      featureIP: "IP-отслеживание",
+      featureIPDesc: "Видите IP, город и регион пользователя.",
+      featureHistory: "История",
+      featureHistoryDesc: "Сессии и скриншоты сохраняются автоматически.",
+      featureMultilang: "Поддержка языков",
+      featureMultilangDesc: "Используйте ChillTool's на родном языке — 11 языков.",
+      downloadTitle: "Скачайте ChillTool's",
+      downloadDesc: "Поддерживает все Chromium-браузеры",
+      downloadButton: "Скачать расширение",
+      contactTitle: "Остались вопросы?",
+      contactText: "Напишите нам:"
+    },
+    pt: {
+      intro: "Apresentando ChillTool's",
+      headline: "Revolucione o Uhmegle. Funções que você realmente precisa.",
+      subheadline: "Capturas, pausa, histórico completo — tudo em uma extensão.",
+      downloadNow: "Baixar agora",
+      learnMore: "Saiba mais →",
+      featuresTitle: "Recursos aprimorados",
+      featureScreenshot: "Captura de tela",
+      featureScreenshotDesc: "Capture momentos importantes do chat com um clique.",
+      featurePause: "Pausar conversa",
+      featurePauseDesc: "Precisa de um tempo? Pause a conversa a qualquer momento.",
+      featureIP: "Rastreamento de IP",
+      featureIPDesc: "Veja IP, cidade e região do usuário.",
+      featureHistory: "Histórico",
+      featureHistoryDesc: "Todos os dados são salvos automaticamente.",
+      featureMultilang: "Interface multilingue",
+      featureMultilangDesc: "Use ChillTool's no seu idioma — 11 disponíveis.",
+      downloadTitle: "Baixe o ChillTool's",
+      downloadDesc: "Compatível com navegadores baseados em Chromium",
+      downloadButton: "Baixar extensão",
+      contactTitle: "Dúvidas?",
+      contactText: "Fale conosco:"
+    },
+    id: {
+      intro: "Memperkenalkan ChillTool's",
+      headline: "Revolusi Uhmegle. Fitur yang benar-benar kamu butuhkan.",
+      subheadline: "Screenshot, jeda percakapan, histori lengkap — semuanya dalam satu ekstensi.",
+      downloadNow: "Unduh Sekarang",
+      learnMore: "Pelajari Lebih Lanjut →",
+      featuresTitle: "Fitur Unggulan",
+      featureScreenshot: "Screenshot",
+      featureScreenshotDesc: "Tangkap momen terbaik obrolanmu dengan satu klik.",
+      featurePause: "Jeda Obrolan",
+      featurePauseDesc: "Butuh jeda? Jeda obrolan kapan saja.",
+      featureIP: "Pelacakan IP",
+      featureIPDesc: "Lihat IP, kota, dan wilayah pengguna.",
+      featureHistory: "Riwayat",
+      featureHistoryDesc: "Semua IP dan sesi tersimpan otomatis.",
+      featureMultilang: "Dukungan Multibahasa",
+      featureMultilangDesc: "Gunakan ChillTool's dalam bahasa kamu — tersedia 11 bahasa.",
+      downloadTitle: "Unduh ChillTool's Sekarang",
+      downloadDesc: "Kompatibel dengan semua browser berbasis Chromium",
+      downloadButton: "Unduh Ekstensi",
+      contactTitle: "Punya pertanyaan?",
+      contactText: "Hubungi kami:"
+    }
+  };
+
+  document.getElementById("languageSelector").addEventListener("change", function () {
+    const lang = this.value;
+    const elements = document.querySelectorAll("[data-lang-key]");
+    elements.forEach((el) => {
+      const key = el.getAttribute("data-lang-key");
+      if (translations[lang] && translations[lang][key]) {
+        el.innerText = translations[lang][key];
+      }
+    });
+  });
+</script>
+</body>
 </html>
-
-
