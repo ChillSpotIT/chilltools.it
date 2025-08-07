@@ -17,11 +17,17 @@
 <body class="bg-black text-white">
 <!-- Top bar per le robe nostre :33333 -->
 <header class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur border-b border-white/10">
-  <div class="flex items-center justify-between max-w-7xl mx-auto px-6 py-3">
-    <h1 class="text-2xl font-bold">Chill<span class="text-blue-500">Tool's</span></h1>
+  <div class="flex items-center max-w-7xl mx-auto px-6 py-3">
+    <h1 class="text-2xl font-bold mr-auto">Chill<span class="text-blue-500">Tool's</span></h1>
 
-    <!-- Selettore lingue, poco da dire fa quello che deve fare -->
-    <select id="languageSelector" class="bg-black border border-white/20 text-white rounded px-3 py-1 text-sm">
+    <div class="flex items-center space-x-4">
+      <a href="https://discord.gg/MfEFuE4334" 
+         class="px-3 py-2 text-sm bg-indigo-600 text-white font-medium rounded hover:bg-indigo-700 transition duration-300" 
+         data-lang-key="joindiscord">
+        Join Discord
+      </a>
+      <!-- Selettore lingue, poco da dire fa quello che deve fare -->
+      <select id="languageSelector" class="bg-black border border-white/20 text-white rounded px-3 py-1 text-sm">
       <option value="en">English</option>
       <option value="it">Italiano</option>
       <option value="zh">中文</option>
@@ -82,13 +88,7 @@
 <section id="download" class="py-24 text-center">
   <h3 class="text-4xl font-bold mb-6" data-lang-key="downloadTitle">Get ChillTool's Now</h3>
   <p class="text-gray-400" data-lang-key="downloadDesc">Compatible with all Chromium-based browsers</p>
-  <a href="https://discord.gg/MfEFuE4334" class="mt-6 inline-block px-8 py-4 bg-green-600 hover:bg-green-700 rounded-full font-semibold transition" data-lang-key="downloadButton">Download Extension</a>
-</section>
-
-<!-- il contact invece e' da rifare -->
-<section id="contact" class="py-24 text-center">
-  <h3 class="text-3xl font-bold mb-4" data-lang-key="contactTitle">Have questions?</h3>
-   <a href="https://discord.gg/MfEFuE4334" class="mt-6 inline-block px-8 py-4 bg-green-600 hover:bg-green-700 rounded-full font-semibold transition" data-lang-key="joindiscord">Join discord</a>
+  <a href="https://github.com/ChillSpotIT/ChillTool-s/archive/refs/heads/main.zip" class="mt-6 inline-block px-8 py-4 bg-green-600 hover:bg-green-700 rounded-full font-semibold transition" data-lang-key="downloadButton">Download Extension</a>
 </section>
 
 <!-- Footer va bene cosi solo che mancano le cose importanti tipo la partita iva e il DMCA -->
