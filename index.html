@@ -15,7 +15,7 @@
       rel="stylesheet"
     />
 
-    <!-- Detect mobile and add class to body -->
+    <!-- Aggiungo classe is-mobile per dispositivi mobili -->
     <script>
       if (
         /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|Mobile/i.test(
@@ -34,48 +34,75 @@
         scroll-behavior: smooth;
       }
 
-      /* STILI SOLO PER MOBILE (quando la classe is-mobile è presente) */
-      .is-mobile header nav {
+      /* Navbar mobile hidden di default */
+      .is-mobile nav#mobile-nav {
+        display: none;
         flex-direction: column;
         gap: 1rem;
-        font-size: 1.125rem; /* leggermente più grande per mobile */
-      }
-      .is-mobile header nav a {
-        padding: 0.75rem 1rem;
-        display: block;
-        text-align: center;
-      }
-      .is-mobile section#features .grid {
-        grid-template-columns: 1fr !important; /* griglia a 1 colonna */
-        gap: 1.5rem !important;
-      }
-      .is-mobile section#features > h3 {
-        font-size: 2rem;
-      }
-      .is-mobile section#download a {
+        background-color: rgba(0, 0, 0, 0.85);
+        position: fixed;
+        top: 4.5rem; /* sotto header */
+        right: 1rem;
+        border-radius: 8px;
         padding: 1rem 2rem;
-        font-size: 1.25rem;
+        z-index: 100;
+        width: 200px;
+        box-shadow: 0 0 10px #000;
       }
-      .is-mobile .flex.flex-col.sm\:flex-row {
-        flex-direction: column !important;
+      .is-mobile nav#mobile-nav.active {
+        display: flex;
       }
-      .is-mobile .text-5xl {
-        font-size: 2.5rem !important;
+
+      /* Bottone hamburger */
+      #hamburger-btn {
+        display: none;
       }
-      /* Header fisso con meno altezza su mobile */
-      .is-mobile header {
-        padding: 0.5rem 1rem !important;
+      .is-mobile #hamburger-btn {
+        display: block;
+        cursor: pointer;
+        width: 30px;
+        height: 24px;
+        position: relative;
+        z-index: 110;
+        background: none;
+        border: none;
+      }
+      /* Le 3 righe hamburger */
+      #hamburger-btn span {
+        background-color: white;
+        display: block;
+        height: 3px;
+        margin: 5px 0;
+        border-radius: 2px;
+        transition: 0.3s;
+      }
+
+      /* Nascondo navbar desktop su mobile */
+      .is-mobile .nav-desktop {
+        display: none;
+      }
+
+      /* Stile link mobile */
+      .is-mobile nav#mobile-nav a {
+        color: white;
+        font-size: 1.1rem;
+        text-decoration: none;
+        padding: 0.5rem 0;
+      }
+      .is-mobile nav#mobile-nav a:hover {
+        color: #3b82f6; /* blue-500 */
       }
     </style>
   </head>
   <body class="bg-black text-white">
     <!-- Banner -->
     <header
-      class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur border-b border-white/10"
+      class="fixed top-0 left-0 w-full z-50 bg-black/70 backdrop-blur border-b border-white/10 flex justify-between items-center px-6 py-4 max-w-7xl mx-auto"
     >
       <!-- Barra della community di discord -->
       <div
-        class="text-sm text-center bg-black text-white py-2 border-b border-gray-800"
+        class="text-sm text-center bg-black text-white py-2 border-b border-gray-800 w-full absolute top-0 left-0"
+        style="z-index: 60"
       >
         🔗 Unisciti alla nostra
         <a
@@ -85,26 +112,44 @@
         >
       </div>
 
-      <!-- LA NAVBAR -->
-      <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 class="text-2xl font-bold tracking-tight">
-          Chill<span class="text-blue-500">Tool's</span>
-        </h1>
-        <nav class="flex gap-6 items-center text-sm">
-          <a href="#features" class="hover:text-blue-400 transition">Funzioni</a>
-          <a href="#contact" class="hover:text-blue-400 transition">Contatti</a>
-          <a
-            href="#download"
-            class="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
-            >Download</a
-          >
-        </nav>
-      </div>
+      <h1 class="text-2xl font-bold tracking-tight z-50">
+        Chill<span class="text-blue-500">Tool's</span>
+      </h1>
+
+      <!-- Hamburger button solo mobile -->
+      <button id="hamburger-btn" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Navbar desktop (normale) -->
+      <nav class="nav-desktop flex gap-6 items-center text-sm">
+        <a href="#features" class="hover:text-blue-400 transition">Funzioni</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contatti</a>
+        <a
+          href="#download"
+          class="ml-4 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+          >Download</a
+        >
+      </nav>
+
+      <!-- Navbar mobile, inizialmente nascosta -->
+      <nav id="mobile-nav" aria-label="Menu mobile">
+        <a href="#features" class="hover:text-blue-400 transition">Funzioni</a>
+        <a href="#contact" class="hover:text-blue-400 transition">Contatti</a>
+        <a
+          href="#download"
+          class="ml-0 px-0 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition block text-center"
+          >Download</a
+        >
+      </nav>
     </header>
 
     <!-- Hero -->
     <section
       class="h-screen flex items-center justify-center text-center relative overflow-hidden"
+      style="padding-top: 5rem"
     >
       <div
         class="absolute inset-0 bg-gradient-to-br from-purple-800/30 via-blue-800/30 to-black backdrop-blur-lg"
@@ -137,7 +182,11 @@
     </section>
 
     <!-- Features -->
-    <section id="features" class="py-24 bg-black px-6 max-w-6xl mx-auto">
+    <section
+      id="features"
+      class="py-24 bg-black px-6 max-w-6xl mx-auto"
+      style="padding-top: 2rem"
+    >
       <h3 class="text-4xl font-bold text-center mb-16">Funzionalità Potenziate</h3>
       <div class="grid md:grid-cols-3 gap-12">
         <div
@@ -145,8 +194,8 @@
         >
           <h4 class="text-xl font-semibold mb-3">📸 Screenshot</h4>
           <p class="text-gray-400">
-            Cattura i momenti più interessanti o divertenti della tua chat Omegle
-            con un click.
+            Cattura i momenti più interessanti o divertenti della tua chat
+            Omegle con un click.
           </p>
         </div>
         <div
@@ -163,8 +212,8 @@
         >
           <h4 class="text-xl font-semibold mb-3">🌍 IP Tracking</h4>
           <p class="text-gray-400">
-            Visualizza l'indirizzo IP, la città e la regione dell’utente connesso.
-            Ogni conversazione diventa più trasparente.
+            Visualizza l'indirizzo IP, la città e la regione dell’utente
+            connesso. Ogni conversazione diventa più trasparente.
           </p>
         </div>
         <div
@@ -191,9 +240,7 @@
     <!-- Download -->
     <section id="download" class="py-24 text-center">
       <h3 class="text-4xl font-bold mb-6">Scarica ChillTool's</h3>
-      <p class="text-gray-400 mb-4">
-        Estensione compatibile con browser Chromium based
-      </p>
+      <p class="text-gray-400 mb-4">Estensione compatibile con browser Chromium based</p>
       <div class="mt-10">
         <a
           href="https://discord.gg/MfEFuE4334"
@@ -223,5 +270,22 @@
       &copy; 2025 ChillTool's. Tutti i diritti riservati. | ChillTool's è parte di
       ChillSpot&trade;.
     </footer>
+
+    <script>
+      // Toggle menu mobile
+      const hamburgerBtn = document.getElementById("hamburger-btn");
+      const mobileNav = document.getElementById("mobile-nav");
+
+      hamburgerBtn?.addEventListener("click", () => {
+        mobileNav.classList.toggle("active");
+      });
+
+      // Optional: chiudi menu al click su link mobile
+      document.querySelectorAll("#mobile-nav a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobileNav.classList.remove("active");
+        });
+      });
+    </script>
   </body>
 </html>
