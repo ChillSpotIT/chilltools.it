@@ -354,20 +354,21 @@
     }
   };
 
-elements.forEach((el) => {
-  const key = el.getAttribute("data-lang-key");
-  if (translations[lang] && translations[lang][key]) {
-    if (key === "contactText") {
-      el.innerHTML = translations[lang][key]; 
-    } else {
-      el.innerText = translations[lang][key];
-    }
-  }
-});
+document.getElementById("languageSelector").addEventListener("change", function () {
+    const lang = this.value;
+    const elements = document.querySelectorAll("[data-lang-key]");
+    elements.forEach((el) => {
+      const key = el.getAttribute("data-lang-key");
+      if (translations[lang] && translations[lang][key]) {
+        el.innerText = translations[lang][key];
+      }
+    });
+  });
 
 </script>
 </body>
 </html>
+
 
 
 
