@@ -18,7 +18,6 @@
       .animation-delay-2000 { animation-delay: 2s; }
       .animation-delay-4000 { animation-delay: 4s; }
       
-      /* Confetti styles */
       .confetti {
         position: fixed;
         width: 10px;
@@ -49,14 +48,12 @@
     <meta name="description" content="Introducing ChillTool's for Uhmegle.com: screenshots, pause chat anytime, full history and more, all in one powerful extension." />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      // Cursor Follower
       document.addEventListener('mousemove', (e) => {
         const cursor = document.getElementById('cursor-follower');
         cursor.style.left = e.clientX + 'px';
         cursor.style.top = e.clientY + 'px';
       });
       
-      // Confetti Party
       document.getElementById('party-btn').addEventListener('click', () => {
         const colors = ['#ec4899', '#8b5cf6', '#3b82f6', '#10b981', '#f59e0b'];
         for (let i = 0; i < 100; i++) {
@@ -74,13 +71,11 @@
         confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
         document.body.appendChild(confetti);
         
-        // Remove confetti after animation
         setTimeout(() => {
           confetti.remove();
         }, 3000);
       }
       
-      // Browser detection
       function getBrowser() {
         const userAgent = navigator.userAgent.toLowerCase();
         if (userAgent.indexOf('firefox') > -1) {
@@ -96,7 +91,6 @@
         }
       }
 
-      // Update download button text based on browser
       function updateDownloadButtons() {
         const browser = getBrowser();
         const downloadButtons = document.querySelectorAll('[data-i18n="cta.download"]');
@@ -109,11 +103,9 @@
             button.textContent = 'Download from Add-Ons';
             button.href = 'https://github.com/ChillSpotIT/ChillTool-s/archive/refs/heads/beta.zip';
           }
-          // For other browsers, keep the default 'Download Now' text
         });
       }
 
-      // Run on page load
       document.addEventListener('DOMContentLoaded', updateDownloadButtons);
 
       tailwind.config = {
@@ -141,14 +133,10 @@
       };
     </script>
 
-    <!-- Inter font -->
     <script>
-      // Smooth scrolling for anchor links
       document.addEventListener('DOMContentLoaded', () => {
-        // Initialize browser detection and update download buttons
         updateDownloadButtons();
 
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
           anchor.addEventListener('click', function(e) {
             e.preventDefault();
@@ -162,7 +150,6 @@
           });
         });
 
-        // Mobile menu toggle
         const mobileMenuButton = document.querySelector('.md\\:hidden button');
         if (mobileMenuButton) {
           const mobileMenu = document.createElement('div');
@@ -179,7 +166,6 @@
             mobileMenu.classList.toggle('hidden');
           });
 
-          // Close mobile menu when clicking outside
           document.addEventListener('click', (e) => {
             if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
               mobileMenu.classList.add('hidden');
@@ -187,7 +173,6 @@
           });
         }
 
-        // Add animation on scroll for feature cards
         const observerOptions = {
           threshold: 0.1,
           rootMargin: '0px 0px -50px 0px'
@@ -202,7 +187,6 @@
           });
         }, observerOptions);
 
-        // Initialize feature card animations
         document.querySelectorAll('.feature-card').forEach((card, index) => {
           card.style.opacity = '0';
           card.style.transform = 'translateY(20px)';
@@ -440,7 +424,6 @@
               </div>
             </div>
 
-            <!-- Multilanguage UI -->
             <div class="glass rounded-2xl p-6 hover:ring-1 hover:ring-white/10 transition-all duration-300 hover:-translate-y-1">
               <div class="flex items-start gap-4">
                 <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white text-lg">
