@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChillTool's | Terms of Service</title>
+    <meta name="description" content="Terms of Service for ChillTool's IPGrabber extension for Uhmegle">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
+            },
+            colors: {
+              chill: {
+                50: "#faf7ff",
+                100: "#f2e9ff",
+                200: "#e5d4ff",
+                300: "#cdb0ff",
+                400: "#b087ff",
+                500: "#965fff",
+                600: "#7c3aed",
+                700: "#6d28d9",
+                800: "#5b21b6",
+                900: "#4c1d95",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      .grad-move {
+        background-size: 200% 200%;
+        animation: gradientMove 12s ease infinite;
+      }
+      @keyframes gradientMove {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      .glass {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        background-color: rgba(17, 24, 39, 0.5);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+      }
+    </style>
+  </head>
+  <body class="font-display text-white bg-gradient-to-br from-chill-900 via-indigo-900 to-fuchsia-900 min-h-screen relative overflow-x-hidden pt-20">
+    <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      <div class="grad-move absolute -top-1/3 -left-1/4 w-[50rem] h-[50rem] rounded-full opacity-30 blur-3xl"
+           style="background-image: radial-gradient(closest-side, #8b5cf6, transparent), radial-gradient(closest-side, #ec4899, transparent);"></div>
+      <div class="grad-move absolute -bottom-1/4 -right-1/4 w-[40rem] h-[40rem] rounded-full opacity-20 blur-3xl"
+           style="background-image: radial-gradient(closest-side, #22d3ee, transparent), radial-gradient(closest-side, #a78bfa, transparent); animation-direction: reverse;"></div>
+    </div>
+
+    <header class="fixed inset-x-0 top-0 z-50 backdrop-blur bg-white/5 bg-gradient-to-b from-black/20 to-transparent border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-white ring-1 ring-white/15 group-hover:ring-white/25 transition">
+            <img src="./assets/logo.png" alt="Logo" class="w-6 h-6 object-contain">
+          </span>
+          <span class="text-xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">ChillTool's</span>
+        </a>
+        
+        <nav class="hidden sm:flex items-center gap-6 text-sm">
+          <a href="index.html#features" class="text-white/80 hover:text-white transition" data-i18n="nav.features">Features</a>
+          <a href="introducing.html" class="text-white/80 hover:text-white transition" data-i18n="nav.docs">Documentation</a>
+          <a href="https://github.com/ChillSpotIT/ChillTool-s/archive/refs/heads/beta.zip" class="text-white/80 hover:text-white transition" data-i18n="nav.download">Download</a>
+          <a href="https://discord.gg/FBsPkXDche" class="text-white/80 hover:text-white transition" data-i18n="nav.community">Community</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <label for="lang" class="sr-only">Language</label>
+          <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2a10 10 0 1 0 10 10A10.012 10.012 0 0 0 12 2Zm7.93 9h-3.18a15.8 15.8 0 0 0-1.27-5.01A8.013 8.013 0 0 1 19.93 11ZM12 4c.91 0 2.46 1.88 3.2 5H8.8C9.54 5.88 11.09 4 12 4ZM6.52 13h10.96a13.7 13.7 0 0 1-1.44 4.45c-.9 1.76-1.96 2.55-3.04 2.55s-2.14-.79-3.04-2.55A13.7 13.7 0 0 1 6.52 13Zm-1.45-2A8.013 8.013 0 0 1 7.52 5.99 15.8 15.8 0 0 0 6.25 11H5.07ZM4.07 13h2.18a15.8 15.8 0 0 0 1.27 5.01A8.013 8.013 0 0 1 4.07 13Zm14.86 0h2.18a8.013 8.013 0 0 1-3.45 4.99A15.8 15.8 0 0 0 18.93 13ZM8.8 19h6.4c-.74 3.12-2.29 5-3.2 5s-2.46-1.88-3.2-5Z"/>
+            </svg>
+            <select id="lang" class="appearance-none pl-10 pr-8 py-2 rounded-lg bg-white/10 text-white/90 ring-1 ring-white/20 hover:bg-white/20 backdrop-blur-sm transition-all duration-200 cursor-pointer text-sm focus:outline-none focus:ring-2 focus:ring-white/30">
+              <option value="en">English</option>
+              <option value="it">Italiano</option>
+              <option value="es">Español</option>
+              <option value="fr">Français</option>
+              <option value="de">Deutsch</option>
+              <option value="pt">Português</option>
+              <option value="ru">Русский</option>
+              <option value="zh">中文</option>
+              <option value="ja">日本語</option>
+              <option value="ar" dir="rtl">العربية</option>
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="pointer-events-none absolute right-2 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70">
+              <path fill-rule="evenodd" d="M12.53 16.28a.75.75 0 0 1-1.06 0l-7.5-7.5a.75.75 0 0 1 1.06-1.06L12 14.69l6.97-6.97a.75.75 0 1 1 1.06 1.06l-7.5 7.5Z" clip-rule="evenodd" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="relative z-10">
+      <section class="max-w-4xl mx-auto px-6 py-20">
+        <div class="glass rounded-2xl p-8 md:p-12">
+          <h1 class="text-3xl md:text-4xl font-bold mb-8 bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent" data-i18n="tos.title">Terms of Service</h1>
+          <p class="text-white/80 mb-8" data-i18n="tos.effective_date">Effective Date: 11/12/24</p>
+          
+          <div class="prose prose-invert max-w-none text-white/90">
+            <p class="mb-6" data-i18n="tos.intro">By using the IPGrabber extension for Uhmegle ("ChillTool's"), you agree to comply with the following terms and conditions. If you do not agree with these terms, you must refrain from using the Extension.</p>
+            
+            <h2 class="text-xl font-bold mt-8 mb-4 text-white" data-i18n="tos.use_of_extension">1. Use of the Extension</h2>
+            <p class="mb-6" data-i18n="tos.use_of_extension_desc">The IPGrabber extension for Uhmegle is a tool designed for use within the Uhmegle platform. By using this Extension, you acknowledge that you are solely responsible for its use and any actions performed while using it. The Extension is provided "as is" and for personal use only.</p>
+            
+            <h2 class="text-xl font-bold mt-8 mb-4 text-white" data-i18n="tos.no_responsibility">2. No Responsibility for Misuse</h2>
+            <p class="mb-6" data-i18n="tos.no_responsibility_desc">The developers of this Extension do not take any responsibility for the way it is used. You agree not to use this Extension for illegal activities, such as but not limited to harassment, privacy violations, or obtaining information from other users without their consent. Any misuse of the Extension is at your own risk.</p>
+            
+            <h2 class="text-xl font-bold mt-8 mb-4 text-white" data-i18n="tos.privacy">3. Privacy and Data Collection</h2>
+            <p class="mb-6" data-i18n="tos.privacy_desc">The Extension may collect information as described in the privacy policy. However, the developers do not guarantee the security of the data or take any responsibility for its potential misuse or exposure.</p>
+            
+            <h2 class="text-xl font-bold mt-8 mb-4 text-white" data-i18n="tos.liability">4. No Liability</h2>
+            <p class="mb-6" data-i18n="tos.liability_desc">The developers of this Extension shall not be liable for any damages, loss of data, or any other negative consequences resulting from the use or misuse of the Extension. This includes but is not limited to any legal action, penalties, or consequences resulting from violations of privacy, intellectual property, or other laws.</p>
+            
+            <div class="mt-12 pt-8 border-t border-white/10">
+              <p class="text-sm text-white/60" data-i18n="tos.last_updated">Last updated: December 11, 2024</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 mt-10 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-6 py-10 grid gap-6 sm:flex sm:items-center sm:justify-between">
+        <div class="text-white/80 text-sm">
+          <p data-i18n="footer.rights">© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.</p>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="#" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 ring-1 ring-white/15 transition text-sm" data-i18n="footer.guidelines">Guidelines</a>
+          <a href="https://discord.gg/FBsPkXDche" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 ring-1 ring-white/15 transition text-sm" data-i18n="footer.contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function() {
+        const el = (sel) => document.querySelector(sel);
+        const els = (sel) => Array.from(document.querySelectorAll(sel));
+        const STORAGE_KEY = 'chill_lang';
+        const supported = ['en','it','zh','hi','es','ar','fr','bn','ru','pt','id'];
+        const fallback = 'en';
+
+        const translations = {
+          ui: {
+            'preview': {
+              en: 'Preview',
+              it: 'Anteprima',
+              zh: '预览',
+              hi: 'पूर्वावलोकन',
+              es: 'Vista previa',
+              ar: 'معاينة',
+              fr: 'Aperçu',
+              bn: 'পূর্বরূপ',
+              ru: 'Предпросмотр',
+              pt: 'Visualização',
+              id: 'Pratinjau'
+            },
+            'lightweight': {
+              en: 'Lightweight',
+              it: 'Leggera',
+              zh: '轻量',
+              hi: 'हल्का',
+              es: 'Ligero',
+              ar: 'خفيف',
+              fr: 'Léger',
+              bn: 'হালকা',
+              ru: 'Лёгкий',
+              pt: 'Leve',
+              id: 'Ringan'
+            },
+          },
+          
+          en: {
+            'nav.features': 'Features',
+            'nav.download': 'Download',
+            'nav.community': 'Community',
+            'nav.docs': 'Documentation',
+            'footer.rights': '© 2025 ChillTool\'s. All rights reserved. | Part of ChillSpot™.',
+            'footer.guidelines': 'Guidelines',
+            'footer.contact': 'Contact',
+            'tos.title': 'Terms of Service',
+            'tos.effective_date': 'Effective Date: 11/12/24',
+            'tos.intro': 'By using the extension for Uhmegle ("ChillTool\'s"), you agree to comply with the following terms and conditions. If you do not agree with these terms, you must refrain from using the Extension.',
+            'tos.use_of_extension': '1. Use of the Extension',
+            'tos.use_of_extension_desc': 'The extension ChillTool\'s for Uhmegle is a tool designed for use within the Uhmegle platform. By using this Extension, you acknowledge that you are solely responsible for its use and any actions performed while using it. The Extension is provided "as is" and for personal use only.',
+            'tos.no_responsibility': '2. No Responsibility for Misuse',
+            'tos.no_responsibility_desc': 'The developers of this Extension do not take any responsibility for the way it is used. You agree not to use this Extension for illegal activities, such as but not limited to harassment, privacy violations, or obtaining information from other users without their consent. Any misuse of the Extension is at your own risk.',
+            'tos.privacy': '3. Privacy and Data Collection',
+            'tos.privacy_desc': 'The Extension may collect information as described in the privacy policy. However, the developers do not guarantee the security of the data or take any responsibility for its potential misuse or exposure.',
+            'tos.liability': '4. No Liability',
+            'tos.liability_desc': 'The developers of this Extension shall not be liable for any damages, loss of data, or any other negative consequences resulting from the use or misuse of the Extension. This includes but is not limited to any legal action, penalties, or consequences resulting from violations of privacy, intellectual property, or other laws.',
+            'tos.last_updated': 'Last updated: December 11, 2024'
+          },
+          it: {
+            'nav.features': 'Funzionalità',
+            'nav.download': 'Scarica',
+            'nav.community': 'Community',
+            'nav.docs': 'Documentazione',
+            'footer.rights': '© 2025 ChillTool\'s. Tutti i diritti riservati. | Parte di ChillSpot™.',
+            'footer.guidelines': 'Linee guida',
+            'footer.contact': 'Contatti',
+            'tos.title': 'Termini di Servizio',
+            'tos.effective_date': 'Data di entrata in vigore: 11/12/24',
+            'tos.intro': 'Utilizzando l\'estensione per Uhmegle ("ChillTool\'s"), accetti di rispettare i seguenti termini e condizioni. Se non sei d\'accordo con questi termini, devi astenerti dall\'utilizzare l\'Estensione.',
+            'tos.use_of_extension': '1. Utilizzo dell\'Estensione',
+            'tos.use_of_extension_desc': 'L\'estensione ChillTool\'s per Uhmegle è uno strumento progettato per l\'utilizzo all\'interno della piattaforma Uhmegle. Utilizzando questa Estensione, riconosci di essere l\'unico responsabile del suo utilizzo e di qualsiasi azione intrapresa durante il suo utilizzo. L\'Estensione è fornita "così com\'è" e solo per uso personale.',
+            'tos.no_responsibility': '2. Nessuna Responsabilità per Uso Improprio',
+            'tos.no_responsibility_desc': 'Gli sviluppatori di questa Estensione non si assumono alcuna responsabilità per il modo in cui viene utilizzata. Accetti di non utilizzare questa Estensione per attività illegali, come ma non limitato a molestie, violazioni della privacy o ottenimento di informazioni da altri utenti senza il loro consenso. Qualsiasi uso improprio dell\'Estensione è a tuo rischio e pericolo.',
+            'tos.privacy': '3. Privacy e Raccolta Dati',
+            'tos.privacy_desc': 'L\'Estensione potrebbe raccogliere informazioni come descritto nell\'informativa sulla privacy. Tuttavia, gli sviluppatori non garantiscono la sicurezza dei dati né si assumono alcuna responsabilità per il loro potenziale uso improprio o esposizione.',
+            'tos.liability': '4. Esclusione di Responsabilità',
+            'tos.liability_desc': 'Gli sviluppatori di questa Estensione non saranno responsabili per eventuali danni, perdita di dati o altre conseguenze negative derivanti dall\'uso o dall\'uso improprio dell\'Estensione. Ciò include, a titolo esemplificativo ma non esaustivo, qualsiasi azione legale, sanzione o conseguenza derivante da violazioni della privacy, della proprietà intellettuale o di altre leggi.',
+            'tos.last_updated': 'Ultimo aggiornamento: 11 dicembre 2024'
+          },
+        };
+
+        function getLang() {
+          const saved = localStorage.getItem(STORAGE_KEY);
+          if (saved && supported.includes(saved)) return saved;
+          return fallback;
+        }
+
+        function setLang(lang) {
+          const l = supported.includes(lang) ? lang : fallback;
+          localStorage.setItem(STORAGE_KEY, l);
+          document.documentElement.setAttribute('lang', l);
+          applyI18n(l);
+        }
+
+        function applyI18n(lang) {
+          const t = translations[lang] || translations[fallback];
+          const ui = translations.ui || {};
+          
+          els('[data-i18n]').forEach(el => {
+            const key = el.getAttribute('data-i18n');
+            let value = t[key];
+            
+            if (!value && key.startsWith('ui.')) {
+              const uiKey = key.split('.').pop();
+              const uiValue = ui[uiKey]?.[lang] || ui[uiKey]?.[fallback];
+              if (uiValue) value = uiValue;
+            }
+            
+            if (value !== undefined) {
+              if (el.tagName === 'INPUT' && el.placeholder) {
+                el.placeholder = value;
+              } else {
+                el.textContent = value;
+              }
+            }
+          });
+        }
+
+        const select = document.getElementById('lang');
+        const initial = getLang();
+        document.documentElement.setAttribute('lang', initial);
+        if (select) select.value = initial;
+        applyI18n(initial);
+
+        if (select) {
+          select.addEventListener('change', (e) => setLang(e.target.value));
+          
+          const closedClasses = 'bg-white/10 text-white/90 ring-white/20 hover:bg-white/20 backdrop-blur-sm';
+          const openClasses = 'bg-white text-chill-900 ring-white/30 hover:bg-white/90';
+          
+          function applySelectStyle(open) {
+            const cls = new Set(select.className.split(/\s+/));
+            closedClasses.split(' ').forEach(c => cls.delete(c));
+            openClasses.split(' ').forEach(c => cls.delete(c));
+            (open ? openClasses : closedClasses).split(' ').forEach(c => c && cls.add(c));
+            select.className = Array.from(cls).join(' ');
+          }
+          
+          applySelectStyle(false);
+          select.addEventListener('focus', () => applySelectStyle(true));
+          select.addEventListener('blur', () => applySelectStyle(false));
+          select.addEventListener('click', () => applySelectStyle(true));
+          select.addEventListener('keydown', () => applySelectStyle(true));
+        }
+      })();
+    </script>
+  </body>
+</html>

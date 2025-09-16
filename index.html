@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChillTool's | Home</title>
+    <meta name="description" content="Introducing ChillTool's for Uhmegle.com: screenshots, pause chat anytime, full history and more, all in one powerful extension." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Browser detection
+      function getBrowser() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.indexOf('firefox') > -1) {
+          return 'firefox';
+        } else if (userAgent.indexOf('edg') > -1) {
+          return 'edge';
+        } else if (userAgent.indexOf('chrome') > -1) {
+          return 'chrome';
+        } else if (userAgent.indexOf('safari') > -1) {
+          return 'safari';
+        } else {
+          return 'other';
+        }
+      }
+
+      // Update download button text based on browser
+      function updateDownloadButtons() {
+        const browser = getBrowser();
+        const downloadButtons = document.querySelectorAll('[data-i18n="cta.download"]');
+        
+        downloadButtons.forEach(button => {
+          if (browser === 'chrome') {
+            button.textContent = 'Download from WebStore';
+            button.href = 'https://chromewebstore.google.com/detail/pdkdjcijjkhhkfdfbdgdfdgobnliphjd';
+          } else if (browser === 'firefox') {
+            button.textContent = 'Download from Add-Ons';
+            button.href = 'https://addons.mozilla.org/firefox/addon/chilltool-s/';
+          }
+          // For other browsers, keep the default 'Download Now' text
+        });
+      }
+
+      // Run on page load
+      document.addEventListener('DOMContentLoaded', updateDownloadButtons);
+
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"],
+            },
+            colors: {
+              chill: {
+                50: "#faf7ff",
+                100: "#f2e9ff",
+                200: "#e5d4ff",
+                300: "#cdb0ff",
+                400: "#b087ff",
+                500: "#965fff",
+                600: "#7c3aed",
+                700: "#6d28d9",
+                800: "#5b21b6",
+                900: "#4c1d95",
+              },
+            },
+          },
+        },
+      };
+    </script>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+      .grad-move { background-size: 200% 200%; animation: gradientMove 12s ease infinite; }
+      @keyframes gradientMove { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+      .glass { backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15); }
+    </style>
+  </head>
+  <body class="font-display text-white bg-gradient-to-br from-chill-900 via-indigo-900 to-fuchsia-900 min-h-screen relative overflow-x-hidden pt-20 sm:pt-24">
+    <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+      <div class="grad-move absolute -top-1/3 -left-1/4 w-[50rem] h-[50rem] rounded-full opacity-30 blur-3xl"
+           style="background-image: radial-gradient(closest-side, #8b5cf6, transparent), radial-gradient(closest-side, #ec4899, transparent);"></div>
+      <div class="grad-move absolute -bottom-1/4 -right-1/4 w-[40rem] h-[40rem] rounded-full opacity-20 blur-3xl"
+           style="background-image: radial-gradient(closest-side, #22d3ee, transparent), radial-gradient(closest-side, #a78bfa, transparent); animation-direction: reverse;"></div>
+    </div>
+
+    <header class="fixed inset-x-0 top-0 z-50 backdrop-blur bg-white/5 bg-gradient-to-b from-black/20 to-transparent border-b border-white/10">
+      <div class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3 group">
+          <span class="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/10 text-white ring-1 ring-white/15 group-hover:ring-white/25 transition">
+            <img src="./assets/logo.png" alt="Logo" class="w-6 h-6 object-contain">
+          </span>
+          <span class="text-xl font-bold bg-gradient-to-r from-white to-white/80 bg-clip-text text-transparent">ChillTool's</span>
+        </a>
+        <div class="flex items-center gap-3">
+          <label for="lang" class="sr-only">Language</label>
+          <div class="relative">
+            <svg xmlns="http://www.w3.org/2000/svg" class="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2a10 10 0 1 0 10 10A10.012 10.012 0 0 0 12 2Zm7.93 9h-3.18a15.8 15.8 0 0 0-1.27-5.01A8.013 8.013 0 0 1 19.93 11ZM12 4c.91 0 2.46 1.88 3.2 5H8.8C9.54 5.88 11.09 4 12 4ZM6.52 13h10.96a13.7 13.7 0 0 1-1.44 4.45c-.9 1.76-1.96 2.55-3.04 2.55s-2.14-.79-3.04-2.55A13.7 13.7 0 0 1 6.52 13Zm-1.45-2A8.013 8.013 0 0 1 7.52 5.99 15.8 15.8 0 0 0 6.25 11H5.07ZM4.07 13h2.18a15.8 15.8 0 0 0 1.27 5.01A8.013 8.013 0 0 1 4.07 13Zm14.86 0h2.18a8.013 8.013 0 0 1-3.45 4.99A15.8 15.8 0 0 0 18.93 13ZM8.8 19h6.4c-.74 3.12-2.29 5-3.2 5s-2.46-1.88-3.2-5Z"/>
+            </svg>
+            <select id="lang" class="pl-9 pr-8 py-2 rounded-lg bg-white/10 hover:bg-white/20 ring-1 ring-white/20 focus:ring-white/40 shadow-lg shadow-fuchsia-900/20 text-sm text-white/90 backdrop-blur-sm appearance-none" title="Language">
+              <option value="en">English</option>
+              <option value="it">Italiano</option>
+              <option value="zh">中文</option>
+              <option value="hi">हिन्दी</option>
+              <option value="es">Español</option>
+              <option value="ar">العربية</option>
+              <option value="fr">Français</option>
+              <option value="bn">বাংলা</option>
+              <option value="ru">Русский</option>
+              <option value="pt">Português</option>
+              <option value="id">Bahasa</option>
+            </select>
+            <svg xmlns="http://www.w3.org/2000/svg" class="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+            </svg>
+          </div>
+          <a href="https://github.com/ChillSpotIT/ChillTool-s/archive/refs/heads/main.zip" class="hidden sm:inline-flex px-4 py-2 rounded-lg bg-white/15 hover:bg-white/25 text-white font-semibold ring-1 ring-white/15 transition" data-i18n="cta.download">Download Now</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="relative z-10">
+      <section id="hero" class="min-h-[calc(100vh-80px)] flex flex-col justify-center max-w-5xl mx-auto px-6 py-16 sm:py-24 text-center">
+        <div class="text-center">
+          <span class="text-sky-300 text-xs font-semibold px-3 py-0.5 rounded-full" style="background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); display: inline-block; line-height: 1.25;" data-i18n="intro.badge">
+            INTRODUCING CHILLTOOL'S
+          </span>
+        </div>
+        <h1 class="mt-5 text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight" data-i18n="intro.title">
+          Revolutionize Uhmegle.com. <span class="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-indigo-300 bg-clip-text text-transparent">Features you actually need.</span>
+        </h1>
+        <p class="mt-5 text-white/85 text-lg sm:text-xl max-w-3xl mx-auto" data-i18n="intro.subtitle">
+          Screenshots, pause chat anytime, full history and more, all in one powerful extension.
+        </p>
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-3">
+          <a id="download" href="https://github.com/ChillSpotIT/ChillTool-s/archive/refs/heads/main.zip" class="px-5 py-3 rounded-xl font-semibold bg-gradient-to-r from-fuchsia-500 to-indigo-500 hover:from-fuchsia-400 hover:to-indigo-400 shadow-lg shadow-fuchsia-900/30 ring-1 ring-white/20 transition" data-i18n="cta.download">Download Now</a>
+          <a href="#features" class="px-5 py-3 rounded-xl font-semibold bg-white/5 hover:bg-white/10 ring-1 ring-white/10 transition" data-i18n="cta.learn_more">Learn More</a>
+        </div>
+        <div class="mt-16 animate-bounce">
+          <a href="#features" class="inline-flex flex-col items-center text-white/60 hover:text-white transition-colors group">
+            <span class="text-sm font-medium mb-2" data-i18n="scroll_down">Scroll to explore</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 group-hover:translate-y-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 13l-7 7-7-7m14-8l-7 7-7-7" />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <section id="features" class="relative z-10 border-t border-white/10">
+        <div class="max-w-6xl mx-auto px-6 py-16">
+          <h2 class="text-2xl sm:text-3xl font-extrabold mb-8" data-i18n="features.heading">Enhanced Features</h2>
+
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="glass rounded-2xl p-6">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">🌍</div>
+                <div>
+                  <h3 class="text-lg font-bold" data-i18n="features.ip.title">IP Tracking</h3>
+                  <p class="text-white/80" data-i18n="features.ip.desc">See the user's IP, city and region for more transparent interactions.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass rounded-2xl p-6">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">🕓</div>
+                <div>
+                  <h3 class="text-lg font-bold" data-i18n="features.history.title">History</h3>
+                  <p class="text-white/80" data-i18n="features.history.desc">All IPs, screenshots and sessions saved automatically, beautifully organized.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass rounded-2xl p-6">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">📸</div>
+                <div>
+                  <h3 class="text-lg font-bold" data-i18n="features.popup.title">Popup Blocker</h3>
+                  <p class="text-white/80" data-i18n="features.popup.desc">Automatically blocks intrusive popups to keep your browsing smooth and uninterrupted.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass rounded-2xl p-6">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">🌐</div>
+                <div>
+                  <h3 class="text-lg font-bold" data-i18n="features.multi.title">Multilanguage UI</h3>
+                  <p class="text-white/80" data-i18n="features.multi.desc">Use ChillTool's in your native language, 11 languages available.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass rounded-2xl p-6 md:col-span-2">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl">⏸️</div>
+                <div>
+                  <h3 class="text-lg font-bold" data-i18n="features.pause.title">Pause Chat</h3>
+                  <p class="text-white/80" data-i18n="features.pause.desc">Need a break? Pause conversations whenever you want, instantly.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="relative z-10 mt-10 border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-6 py-10 grid gap-6 sm:flex sm:items-center sm:justify-between">
+        <div class="text-white/80 text-sm">
+          <div class="font-semibold">ChillTools</div>
+          <div class="opacity-80" data-i18n="footer.rights">© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.</div>
+        </div>
+        <div class="flex items-center gap-3">
+          <a href="./index.html" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 ring-1 ring-white/15 transition text-sm" data-i18n="footer.home">Home</a>
+          <a href="tos" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 ring-1 ring-white/15 transition text-sm" data-i18n="footer.guidelines">ToS</a>
+          <a href="beta" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 ring-1 ring-white/15 transition text-sm">Beta</a>
+          <a href="https://discord.gg/FBsPkXDche" class="px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 ring-1 ring-white/15 transition text-sm" data-i18n="footer.contact">Contact</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      (function() {
+        const els = (sel) => Array.from(document.querySelectorAll(sel));
+        const STORAGE_KEY = 'chill_lang';
+        const supported = ['en','it','zh','hi','es','ar','fr','bn','ru','pt','id'];
+        const fallback = 'en';
+
+        const translations = {
+          en: {
+            'cta.download': 'Download Now',
+            'cta.learn_more': 'Learn More',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': 'Revolutionize Uhmegle.com. Features you actually need.',
+            'intro.subtitle': 'Screenshots, pause chat anytime, full history and more, all in one powerful extension.',
+            'features.heading': 'Enhanced Features',
+            'features.ip.title': 'IP Tracking',
+            'features.ip.desc': "See the user's IP, city and region for more transparent interactions.",
+            'features.history.title': 'History',
+            'features.history.desc': 'All IPs, screenshots and sessions saved automatically, beautifully organized.',
+            'features.popup.title': 'Popup Blocker',
+            'features.popup.desc': 'Automatically blocks intrusive popups to keep your browsing smooth and uninterrupted.',
+            'features.multi.title': 'Multilanguage UI',
+            'features.multi.desc': "Use ChillTool's in your native language, 11 languages available.",
+            'features.pause.title': 'Pause Chat',
+            'features.pause.desc': 'Need a break? Pause conversations whenever you want, instantly.',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': 'Home',
+            'footer.guidelines': 'Terms of Service',
+            'footer.contact': 'Contact',
+          },
+          it: {
+            'cta.download': 'Scarica ora',
+            'cta.learn_more': 'Scopri di più',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': 'Rivoluziona Uhmegle.com. Le funzioni di cui hai davvero bisogno.',
+            'intro.subtitle': "Screenshot, pausa chat quando vuoi, cronologia completa e altro, tutto in un'unica potente estensione.",
+            'features.heading': 'Funzionalità avanzate',
+            'features.ip.title': 'Tracciamento IP',
+            'features.ip.desc': "Visualizza IP, città e regione dell'utente per interazioni più trasparenti.",
+            'features.history.title': 'Cronologia',
+            'features.history.desc': 'Tutti gli IP, gli screenshot e le sessioni salvati automaticamente, organizzati alla perfezione.',
+            'features.popup.title': 'Blocco popup',
+            'features.popup.desc': 'Blocca automaticamente i popup invasivi per una navigazione fluida e senza interruzioni.',
+            'features.multi.title': 'UI multilingua',
+            'features.multi.desc': "Usa ChillTool's nella tua lingua: 11 lingue disponibili.",
+            'features.pause.title': 'Metti in pausa la chat',
+            'features.pause.desc': 'Hai bisogno di una pausa? Metti in pausa le conversazioni quando vuoi, all’istante.',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': 'Home',
+            'footer.guidelines': 'Termini di servizio',
+            'footer.contact': 'Contatti',
+          },
+          zh: {
+            'cta.download': '下载立即',
+            'cta.learn_more': '了解更多',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': '革新 Uhmegle.com。你真正需要的功能。',
+            'intro.subtitle': "截图、随时暂停聊天、完整历史等，强大的全能扩展。",
+            'features.heading': '增强功能',
+            'features.ip.title': 'IP 追踪',
+            'features.ip.desc': "查看用户的 IP、城市和地区，让互动更透明。",
+            'features.history.title': '历史记录',
+            'features.history.desc': '所有 IP、截图和会话自动保存，优雅呈现。',
+            'features.popup.title': '弹窗拦截',
+            'features.popup.desc': '自动拦截干扰性弹窗，保持流畅浏览。',
+            'features.multi.title': '多语言界面',
+            'features.multi.desc': "用你的母语使用 ChillTool's，提供 11 种语言。",
+            'features.pause.title': '暂停聊天',
+            'features.pause.desc': '需要休息？随时一键暂停对话。',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': '首页',
+            'footer.guidelines': '服务条款',
+            'footer.contact': '联系',
+          },
+          hi: {
+            'cta.download': 'अभी डाउनलोड करें',
+            'cta.learn_more': 'और जानें',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': 'Uhmegle.com में क्रांति। वही फीचर्स जिनकी आपको सच में ज़रूरत है।',
+            'intro.subtitle': 'स्क्रीनशॉट, कभी भी चैट रोकें, पूरी हिस्ट्री और बहुत कुछ — एक शक्तिशाली एक्सटेंशन में।',
+            'features.heading': 'उन्नत फीचर्स',
+            'features.ip.title': 'IP ट्रैकिंग',
+            'features.ip.desc': 'उपयोगकर्ता का IP, शहर और क्षेत्र देखें — अधिक पारदर्शी बातचीत के लिए।',
+            'features.history.title': 'हिस्ट्री',
+            'features.history.desc': 'सभी IP, स्क्रीनशॉट और सत्र स्वचालित रूप से सेव — सुंदर ढंग से व्यवस्थित।',
+            'features.popup.title': 'पॉपअप ब्लॉकर',
+            'features.popup.desc': 'अवांछित पॉपअप स्वतः ब्लॉक — ब्राउज़िंग स्मूथ रहे।',
+            'features.multi.title': 'बहुभाषी UI',
+            'features.multi.desc': "ChillTool's को अपनी भाषा में इस्तेमाल करें — 11 भाषाएँ उपलब्ध।",
+            'features.pause.title': 'चैट रोकें',
+            'features.pause.desc': 'ब्रेक चाहिए? जब चाहें चैट रोकें।',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': 'होम',
+            'footer.guidelines': 'सेवा की शर्तें',
+            'footer.contact': 'संपर्क',
+          },
+          es: {
+            'cta.download': 'Descargar ahora',
+            'cta.learn_more': 'Saber más',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': 'Revoluciona Uhmegle.com. Funciones que de verdad necesitas.',
+            'intro.subtitle': 'Capturas, pausa el chat cuando quieras, historial completo y más, todo en una potente extensión.',
+            'features.heading': 'Funciones mejoradas',
+            'features.ip.title': 'Seguimiento de IP',
+            'features.ip.desc': 'Ve la IP, ciudad y región del usuario para interacciones más transparentes.',
+            'features.history.title': 'Historial',
+            'features.history.desc': 'Todas las IPs, capturas y sesiones se guardan automáticamente, organizadas con estilo.',
+            'features.popup.title': 'Bloqueador de pop-ups',
+            'features.popup.desc': 'Bloquea automáticamente los pop-ups intrusivos para una navegación fluida.',
+            'features.multi.title': 'UI multilenguaje',
+            'features.multi.desc': "Usa ChillTool's en tu idioma, 11 idiomas disponibles.",
+            'features.pause.title': 'Pausar chat',
+            'features.pause.desc': '¿Necesitas un descanso? Pausa las conversaciones cuando quieras, al instante.',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': 'Inicio',
+            'footer.guidelines': 'Condiciones del servicio',
+            'footer.contact': 'Contacto',
+          },
+          ar: {
+            'cta.download': 'حمّل الآن',
+            'cta.learn_more': 'اعرف المزيد',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': 'غيّر تجربة Uhmegle.com. مزايا تحتاجها فعلاً.',
+            'intro.subtitle': 'لقطات شاشة، إيقاف الدردشة في أي وقت، سجل كامل والمزيد — كلها في إضافة قوية واحدة.',
+            'features.heading': 'ميزات محسّنة',
+            'features.ip.title': 'تتبّع IP',
+            'features.ip.desc': 'اطّلع على IP المستخدم ومدينة وإقليم لتفاعل أوضح.',
+            'features.history.title': 'السجل',
+            'features.history.desc': 'جميع عناوين IP واللقطات والجلسات تُحفَظ تلقائياً، ومنظمة بشكل جميل.',
+            'features.popup.title': 'مانع النوافذ المنبثقة',
+            'features.popup.desc': 'يحجب تلقائياً النوافذ المزعجة لتصفحٍ سلس.',
+            'features.multi.title': 'واجهة متعددة اللغات',
+            'features.multi.desc': "استخدم ChillTool's بلغتك الأم، 11 لغة متاحة.",
+            'features.pause.title': 'إيقاف الدردشة',
+            'features.pause.desc': 'تحتاج استراحة؟ أوقف المحادثات متى شئت، فوراً.',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': 'الرئيسية',
+            'footer.guidelines': 'شروط الخدمة',
+            'footer.contact': 'اتصال',
+          },
+          fr: {
+            'cta.download': 'Télécharger maintenant',
+            'cta.learn_more': 'En savoir plus',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': 'Révolutionnez Uhmegle.com. Des fonctions dont vous avez vraiment besoin.',
+            'intro.subtitle': "Captures, pause de chat à tout moment, historique complet et plus — dans une extension puissante.",
+            'features.heading': 'Fonctionnalités améliorées',
+            'features.ip.title': 'Suivi IP',
+            'features.ip.desc': "Voir l'IP, la ville et la région de l'utilisateur pour des interactions plus transparentes.",
+            'features.history.title': 'Historique',
+            'features.history.desc': "Toutes les IP, captures et sessions sont enregistrées automatiquement, joliment organisées.",
+            'features.popup.title': 'Bloqueur de popups',
+            'features.popup.desc': 'Bloque automatiquement les popups intrusifs pour une navigation fluide.',
+            'features.multi.title': 'Interface multilingue',
+            'features.multi.desc': "Utilisez ChillTool's dans votre langue — 11 langues disponibles.",
+            'features.pause.title': 'Pause du chat',
+            'features.pause.desc': 'Besoin d’une pause ? Mettez en pause instantanément.',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': 'Accueil',
+            'footer.guidelines': 'Conditions d\'utilisation',
+            'footer.contact': 'Contact',
+          },
+          bn: {
+            'cta.download': 'এখন ডাউনলোড করুন',
+            'cta.learn_more': 'আরও জানুন',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': 'Uhmegle.com-কে নতুন রূপ দিন। সত্যিই দরকারি ফিচার।',
+            'intro.subtitle': 'স্ক্রিনশট, যেকোনো সময় চ্যাট থামান, সম্পূর্ণ হিস্ট্রি—সব এক শক্তিশালী এক্সটেনশনে।',
+            'features.heading': 'উন্নত ফিচার',
+            'features.ip.title': 'IP ট্র্যাকিং',
+            'features.ip.desc': 'ব্যবহারকারীর IP, শহর ও অঞ্চল দেখুন—আরও স্বচ্ছ যোগাযোগের জন্য।',
+            'features.history.title': 'হিস্ট্রি',
+            'features.history.desc': 'সব IP, স্ক্রিনশট ও সেশন অটো সেভ—সুন্দরভাবে সাজানো।',
+            'features.popup.title': 'পপআপ ব্লকার',
+            'features.popup.desc': 'ঝামেলাপূর্ণ পপআপ স্বয়ংক্রিয়ভাবে ব্লক—নিরবচ্ছিন্ন ব্রাউজিং।',
+            'features.multi.title': 'বহুভাষিক UI',
+            'features.multi.desc': "নিজের ভাষায় ব্যবহার করুন ChillTool's — ১১টি ভাষা।",
+            'features.pause.title': 'চ্যাট বিরতি',
+            'features.pause.desc': 'বিরতি দরকার? সঙ্গে সঙ্গে চ্যাট থামান।',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': 'হোম',
+            'footer.guidelines': 'সুরক্ষা প্রক্রিয়া',
+            'footer.contact': 'যোগাযোগ',
+          },
+          ru: {
+            'cta.download': 'Скачать сейчас',
+            'cta.learn_more': 'Узнать больше',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': 'Революция на Uhmegle.com. Функции, которые действительно нужны.',
+            'intro.subtitle': "Скриншоты, пауза чата в любой момент, полный журнал и многое другое — всё в одном мощном расширении.",
+            'features.heading': 'Расширенные функции',
+            'features.ip.title': 'Отслеживание IP',
+            'features.ip.desc': 'Просматривайте IP, город и регион пользователя для прозрачного общения.',
+            'features.history.title': 'История',
+            'features.history.desc': 'Все IP, скриншоты и сессии сохраняются автоматически и красиво организованы.',
+            'features.popup.title': 'Блокировщик всплывающих окон',
+            'features.popup.desc': 'Автоматически блокирует навязчивые всплывающие окна для плавного просмотра.',
+            'features.multi.title': 'Многоязычный интерфейс',
+            'features.multi.desc': "Используйте ChillTool's на родном языке, доступно 11 языков.",
+            'features.pause.title': 'Пауза чата',
+            'features.pause.desc': 'Нужен перерыв? Ставьте на паузу мгновенно.',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': 'Главная',
+            'footer.guidelines': 'Условия использования',
+            'footer.contact': 'Контакты',
+          },
+          pt: {
+            'cta.download': 'Baixar agora',
+            'cta.learn_more': 'Saiba mais',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': 'Revolucione o Uhmegle.com. Recursos de que você realmente precisa.',
+            'intro.subtitle': 'Capturas, pause o chat a qualquer hora, histórico completo e mais — tudo em uma extensão poderosa.',
+            'features.heading': 'Recursos aprimorados',
+            'features.ip.title': 'Rastreamento de IP',
+            'features.ip.desc': 'Veja o IP, a cidade e a região do usuário para interações mais transparentes.',
+            'features.history.title': 'Histórico',
+            'features.history.desc': 'Todos os IPs, capturas e sessões salvos automaticamente, lindamente organizados.',
+            'features.popup.title': 'Bloqueador de pop-ups',
+            'features.popup.desc': 'Bloqueia automaticamente pop-ups intrusivos para uma navegação suave.',
+            'features.multi.title': 'UI multilíngue',
+            'features.multi.desc': "Use o ChillTool's no seu idioma — 11 idiomas disponíveis.",
+            'features.pause.title': 'Pausar chat',
+            'features.pause.desc': 'Precisa de uma pausa? Pause quando quiser, instantaneamente.',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': 'Início',
+            'footer.guidelines': 'Conditions d\'utilisation',
+            'footer.contact': 'Contato',
+          },
+          id: {
+            'cta.download': 'Unduh sekarang',
+            'cta.learn_more': 'Pelajari lebih lanjut',
+            'intro.badge': "INTRODUCING CHILLTOOL'S",
+            'intro.title': 'Revolusi Uhmegle.com. Fitur yang benar-benar Anda butuhkan.',
+            'intro.subtitle': 'Tangkapan layar, jeda chat kapan saja, riwayat penuh dan banyak lagi — semua dalam satu ekstensi kuat.',
+            'features.heading': 'Fitur yang ditingkatkan',
+            'features.ip.title': 'Pelacakan IP',
+            'features.ip.desc': 'Lihat IP, kota, dan wilayah pengguna untuk interaksi yang lebih transparan.',
+            'features.history.title': 'Riwayat',
+            'features.history.desc': 'Semua IP, tangkapan layar, dan sesi tersimpan otomatis, tertata rapi.',
+            'features.popup.title': 'Pemblokir Popup',
+            'features.popup.desc': 'Memblokir popup mengganggu secara otomatis untuk pengalaman yang mulus.',
+            'features.multi.title': 'UI multibahasa',
+            'features.multi.desc': "Gunakan ChillTool's dalam bahasa Anda, tersedia 11 bahasa.",
+            'features.pause.title': 'Jeda chat',
+            'features.pause.desc': 'Butuh istirahat? Jeda percakapan kapan saja, seketika.',
+            'footer.rights': "© 2025 ChillTool's. All rights reserved. | Part of ChillSpot™.",
+            'footer.home': 'Beranda',
+            'footer.guidelines': 'Conditions d\'utilisation',
+            'footer.contact': 'Kontak',
+          },
+        };
+
+        function getLang() {
+          const saved = localStorage.getItem(STORAGE_KEY);
+          if (saved && supported.includes(saved)) return saved;
+          return fallback;
+        }
+
+        function setLang(lang) {
+          const l = supported.includes(lang) ? lang : fallback;
+          localStorage.setItem(STORAGE_KEY, l);
+          document.documentElement.setAttribute('lang', l);
+          applyI18n(l);
+        }
+
+        function applyI18n(lang) {
+          const dict = translations[lang] || translations[fallback];
+          els('[data-i18n]').forEach(node => {
+            const key = node.getAttribute('data-i18n');
+            if (!key) return;
+            const value = dict[key];
+            if (typeof value === 'string') {
+              if (key === 'intro.title') {
+                const parts = value.split('Features you actually need.');
+                if (parts.length === 2) {
+                  node.innerHTML = `${parts[0]}<span class="bg-gradient-to-r from-fuchsia-400 via-violet-300 to-indigo-300 bg-clip-text text-transparent">Features you actually need.</span>`;
+                } else {
+                  node.textContent = value;
+                }
+              } else {
+                node.textContent = value;
+              }
+            }
+          });
+        }
+
+        const select = document.getElementById('lang');
+        const initial = getLang();
+        document.documentElement.setAttribute('lang', initial);
+        if (select) select.value = initial;
+        applyI18n(initial);
+        if (select) {
+          select.addEventListener('change', (e) => setLang(e.target.value));
+          const closedClasses = 'bg-white/10 text-white/90 ring-white/20 hover:bg-white/20 backdrop-blur-sm';
+          const openClasses = 'bg-white text-chill-900 ring-white/30 hover:bg-white/90';
+          function applySelectStyle(open) {
+            const cls = new Set(select.className.split(/\s+/));
+            closedClasses.split(' ').forEach(c => cls.delete(c));
+            openClasses.split(' ').forEach(c => cls.delete(c));
+            (open ? openClasses : closedClasses).split(' ').forEach(c => c && cls.add(c));
+            select.className = Array.from(cls).join(' ');
+          }
+          applySelectStyle(false);
+          select.addEventListener('focus', () => applySelectStyle(true));
+          select.addEventListener('click', () => applySelectStyle(true));
+          select.addEventListener('keydown', () => applySelectStyle(true));
+          select.addEventListener('blur', () => applySelectStyle(false));
+          select.addEventListener('change', () => applySelectStyle(false));
+        }
+      })();
+    </script>
+  </body>
+</html>
