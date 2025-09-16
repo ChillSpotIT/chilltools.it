@@ -12,7 +12,6 @@
     <meta name="description" content="Introducing ChillTool's for Uhmegle.com: screenshots, pause chat anytime, full history and more, all in one powerful extension." />
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      // Browser detection
       function getBrowser() {
         const userAgent = navigator.userAgent.toLowerCase();
         if (userAgent.indexOf('firefox') > -1) {
@@ -28,7 +27,6 @@
         }
       }
 
-      // Update download button text based on browser
       function updateDownloadButtons() {
         const browser = getBrowser();
         const downloadButtons = document.querySelectorAll('[data-i18n="cta.download"]');
@@ -41,11 +39,9 @@
             button.textContent = 'Download from Add-Ons';
             button.href = 'https://addons.mozilla.org/firefox/addon/chilltool-s/';
           }
-          // For other browsers, keep the default 'Download Now' text
         });
       }
 
-      // Run on page load
       document.addEventListener('DOMContentLoaded', updateDownloadButtons);
 
       tailwind.config = {
@@ -73,7 +69,6 @@
       };
     </script>
 
-    <!-- Inter font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
