@@ -18,7 +18,7 @@ Here you’ll always find the **most secure, optimized, and verified** releases,
 Unlike third-party sources, this website ensures that you always get:
 
 * The **latest official builds**
-* Verified, **versions**
+* Verified **versions**
 * Direct support and installation guides
 
 ---
