@@ -176,21 +176,18 @@
           </div>
         </div>
         <p class="text-sm text-white/40 mb-4" data-i18n="footer.copyright">© 2024 ChillTool's. All rights reserved.</p>
+        <p class="text-sm text-white/40 mb-4">This project is not affiliated with, endorsed by, or associated with Uhmegle or any related platform. All trademarks and platform names are the property of their respective owners.</p>
         <p class="text-xs text-white/30" data-i18n="footer.legal_note">Note: "ChillSpot Inc." is part of our brand name and does not represent a registered company. We do not engage in formal legal proceedings but will respond to legitimate cease & desist communications at <a href="mailto:legal@chilltools.it" class="hover:text-white/60 transition-colors">legal@chilltools.it</a>.</p>
       </div>
     </footer>
 
     <script>
-      // Utility functions
       function el(sel) { return document.querySelector(sel); }
       function els(sel) { return document.querySelectorAll(sel); }
-      
-      // Language configuration
       const STORAGE_KEY = 'chill_lang';
       const supported = ['en', 'it', 'es', 'fr', 'de'];
       const fallback = 'en';
 
-      // Translations
       const translations = {
         en: {
           'nav.back_to_home': 'Back to Home',
@@ -373,7 +370,6 @@
         }
       };
 
-      // Get the current language
       function getLang() {
         if (typeof window === 'undefined') return fallback;
         const saved = localStorage.getItem(STORAGE_KEY);
@@ -382,7 +378,6 @@
         return supported.includes(browserLang) ? browserLang : fallback;
       }
 
-      // Set the current language
       function setLang(lang) {
         if (!supported.includes(lang)) lang = fallback;
         localStorage.setItem(STORAGE_KEY, lang);
@@ -390,7 +385,6 @@
         applyI18n(lang);
       }
 
-      // Apply translations to the page
       function applyI18n(lang) {
         const langData = translations[lang] || translations[fallback];
         
@@ -411,16 +405,13 @@
         });
       }
 
-      // Initialize the page
       document.addEventListener('DOMContentLoaded', () => {
         const select = document.getElementById('lang');
         const initialLang = getLang();
         
-        // Set initial language
         document.documentElement.setAttribute('lang', initialLang);
         applyI18n(initialLang);
         
-        // Set up language selector
         if (select) {
           select.value = initialLang;
           select.addEventListener('change', (e) => {
